@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    {% load static %}
+    <style>
+        body{
+            background-color: rgb(168, 20, 171);
+            margin-top: 10%;
+            background-image: url('{% static "images/pp.jpeg" %}');
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        {% load static %}
+        <style>
+            body{
+              
+              
+            background-image: url('{% static "image/index2.jpg" %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+        
+            }
+        </style>
+    </head>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color:rgb(185, 194, 219);">
+        <a class="navbar-brand" href="{% url 'admin_home' %}">Marian College</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'user_edit' %}">Edit Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'admin_logout' %}">Logout</a>
+            </li>
+           
+            
+          </ul>
+        </div>
+      </nav>
+    <body>
+      <div class="card-body p-5 text-center">
+        <div class="row d-flex justify-content-center align-items-center ">
+
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+        <div class="card-body">
+          <h3 class="mb-4 text-DARK">TEACHER PROFILE</h3> 
+          <img src="{{users.image.url}}" class="w-25" height="200" width="200">   
+              
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{users.user.first_name }}    </li>
+          <li class="list-group-item">{{users.user.last_name }}    </li>
+          <li class="list-group-item">Address: {{users.address }}</li>
+          <li class="list-group-item">Age:        {{users.age }}   </li>
+          <li class="list-group-item">Mobile No.:  {{users.number }}    </li>
+          <li class="list-group-item">Course:  {{users.course.course_name }}    </li>
+        </ul>
+        <div class="card-body">
+          <a href="{% url 'user_home' %}" class="card-link">GO BACK</a>
+          
+        </div>
+          </div>
+</div>
+</div>
+</div>
+
+  
+</body>
+</html>
